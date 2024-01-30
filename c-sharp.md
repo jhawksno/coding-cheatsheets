@@ -7,8 +7,9 @@ Title: C# Cheat Sheet
 This is a work in progress as I learn to code with C#.
 
 **Code breakdown**
-
+~~~C#
 Console.WriteLine("Hello World!");
+~~~
 
 Console = class
 WriteLine = method
@@ -18,7 +19,11 @@ Double-quotes = a literal string
 
 **Literal Value** is a constant value that never changes. If you only wanted a single alphanumeric character printed to screen, you could create a *char* literal by surrounding one alphanumeric character in *single quotes*. 
 
-Example: Console.WriteLine('b');
+Example: 
+
+~~~C#
+Console.WriteLine('b');
+~~~
 
 Single Quotes: Create a character literal. (used for presentation, not calculation!)
 Double Quotes: Creates a string data type.
@@ -34,7 +39,8 @@ double - ~15-17 digits
 decimal - 28-29 digits
 
 Float Literal: Append the letter F after the number. Can be upper or lower-case. 
-~~~
+
+~~~C#
 Console.WriteLine(0.25F);
 ~~~
 
@@ -44,7 +50,7 @@ Console.WriteLine(0.25F);
 
 **Boolean Literals** Represent True or False. The term *bool* is short for boolean. 
 
-~~~
+~~~C#
 Console.WriteLine(true);
 Console.WriteLine(false);
 ~~~
@@ -69,7 +75,7 @@ A variable name is a human friendly label that the complier assigns to a memory 
 *Declare a variable*
 To create a new variable, you must first declare the data type of the variable, and then give it a name.
 
-~~~
+~~~C#
 string firstName;
 ~~~
 
@@ -90,74 +96,101 @@ In this case, you're creating a new variable type *string* called *firstName*. F
 Is also referred to as "setting the variable", or simply a "set" operation.
 
 ### Retrieveing a Variable
+
+Example:
+~~~C#
 string firstName;
 firstName = "James";
 Console.WriteLine(firstName);
+~~~
 
 ### Initialize a Variable
+
+Example:
+~~~C#
 string firstName = "James";
 Console.WriteLine(firstName);
+~~~
 
 ### Implicitly Typed Local Variables
 Is a variable created by using the *var* keyword followed by a variable initialization. Using *var* implies the data type.
 
-Example: var message = "Hello World!";
+Example: 
+~~~C#
+var message = "Hello World!";
+~~~
 
 ## Format literal strings of C#
 
 An escape character sequence is an introduction to the runtime to insert a special character that will affect the output of your string. In C#, the escape character sequence begins with a backslash \ followed by the character your're escaping. 
 
 Example: the \n sequence will add a new line, and a \t sequence will add a tab.
-
+~~~C#
 Console.WriteLine("Hello\nWorld");
+~~~
 
 ### How to insert a double-quotation mark
 
-Example: Console.WriteLine("Hello \"World\"!");
+Example: 
+~~~C#
+Console.WriteLine("Hello \"World\"!");
+~~~
 
 ### Working with a file path**
 C# reseverves the backslash for espace sequences, so will output an error if you try to write out a file path such as "c:\source\repos"
 
 To solve this issue, you can use a double backslash \\ to display a single backslash.
 
-Example: Console.WriteLine("c:\\source\\repos");
+Example: 
+~~~C#
+Console.WriteLine("c:\\source\\repos");
+~~~
 
 ### Verbatim string literal
 A verbatim string literal will keep all whitespace and characters without the need to escape the backslash. To create a verbatim string, use the @ directive before the literal string.
 
-Example: Console.WriteLine(@"    c:\source\repos
+Example: 
+~~~C#
+Console.WriteLine(@"    c:\source\repos
     (this is where your code goes)");
+~~~
 
 ### Unicode escape characters
 Use the \u escape sequence, then a four-character code respresenting some character in Unicode (UTF-16).
 
-Example: // Kon'nichiwa World
+Example: 
+~~~C#
+// Kon'nichiwa World
 Console.WriteLine("\u3053\u3093\u306B\u3061\u306F World!");
+~~~
 
 ## String Concatenation
 Use the string concatenation operator which is the + symbol.
 
-Example: string firstName = "Bob";
+Example: 
+~~~C#
+string firstName = "Bob";
 string message = "Hello " + firstName;
 Console.WriteLine(message);
+~~~
 
 ### Avoid intermediate variables
 Instead of using an extra variable to hold the new string that resulted from the concatentation operation, perform the concatenation operation as you need it.
 
 Example (WRONG): 
-~~~
+~~~C#
 string firstName = "Bob";
- string greeting = "Hello";
+string greeting = "Hello";
 string message = greeting + " " + firstName + "!";
- Console.WriteLine(message);
+Console.WriteLine(message);
 ~~~
 
 Example (CORRECT)
-------
+~~~C#
                 string firstName = "Bob";
                 string greeting = "Hello";
                 Console.WriteLine(greeting + " " + firstName + "!");
-----
+~~~
 
 
 
