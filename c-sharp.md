@@ -1,7 +1,3 @@
----
-Title: C# Cheat Sheet
----
-
 # C# Cheat Sheet
 
 This is a work in progress as I learn to code with C#.
@@ -38,7 +34,7 @@ Double Quotes: Creates a string data type.
 |double     | ~15-17 digits | 
 |decimal    | 28-29 digits  |
 
-Float Literal: Append the letter F after the number. Can be upper or lower-case. 
+Float Literal: Append the letter *"*F* after the number. Can be upper or lower-case. 
 
 ~~~C#
 Console.WriteLine(0.25F);
