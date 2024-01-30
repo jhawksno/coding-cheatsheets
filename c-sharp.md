@@ -32,11 +32,11 @@ Double Quotes: Creates a string data type.
 
 **Floating Point Literal** is a number that contains a decimal, for example 3.14159. C# supports three data types to represent decimal numbers: float, double, decimal. 
 
-Float Type | Precision
--------------------------
-float -- ~6-9 digits
-double - ~15-17 digits
-decimal - 28-29 digits
+|Float Type | Precision     |
+|-----------|:-------------:|
+|float      | ~6-9 digits   |
+|double     | ~15-17 digits | 
+|decimal    | 28-29 digits  |
 
 Float Literal: Append the letter F after the number. Can be upper or lower-case. 
 
@@ -122,9 +122,9 @@ var message = "Hello World!";
 
 ## Format literal strings of C#
 
-An escape character sequence is an introduction to the runtime to insert a special character that will affect the output of your string. In C#, the escape character sequence begins with a backslash \ followed by the character your're escaping. 
+An escape character sequence is an introduction to the runtime to insert a special character that will affect the output of your string. In C#, the escape character sequence begins with a backslash `\` followed by the character your're escaping. 
 
-Example: the \n sequence will add a new line, and a \t sequence will add a tab.
+Example: the `\n` sequence will add a new line, and a `\t` sequence will add a tab.
 ~~~C#
 Console.WriteLine("Hello\nWorld");
 ~~~
@@ -137,9 +137,9 @@ Console.WriteLine("Hello \"World\"!");
 ~~~
 
 ### Working with a file path**
-C# reseverves the backslash for espace sequences, so will output an error if you try to write out a file path such as "c:\source\repos"
+C# reseverves the backslash for espace sequences, so will output an error if you try to write out a file path such as `"c:\source\repos"`.
 
-To solve this issue, you can use a double backslash \\ to display a single backslash.
+To solve this issue, you can use a double backslash `\\` to display a single backslash.
 
 Example: 
 ~~~C#
@@ -147,7 +147,7 @@ Console.WriteLine("c:\\source\\repos");
 ~~~
 
 ### Verbatim string literal
-A verbatim string literal will keep all whitespace and characters without the need to escape the backslash. To create a verbatim string, use the @ directive before the literal string.
+A verbatim string literal will keep all whitespace and characters without the need to escape the backslash. To create a verbatim string, use the `@` directive before the literal string.
 
 Example: 
 ~~~C#
@@ -195,7 +195,7 @@ Console.WriteLine(greeting + " " + firstName + "!");
 ## String interpolation
 Used when you need to combine many literal strings and variables into a single formatted message.
 
-This is achieved by using an *interpolation expression* that is indicated by an opening and closing curly brace symbol ~~~{ }~~~. You can put any C# expression that returns a value inside the braces. The literally string becomes a template when it's prefixed by the ~~~$~~~ character.
+This is achieved by using an *interpolation expression* that is indicated by an opening and closing curly brace symbol `{ }`. You can put any C# expression that returns a value inside the braces. The literally string becomes a template when it's prefixed by the `$` character.
 
 Example:
 
