@@ -3,4 +3,11 @@ A repository for coding references and cheatsheets.
 
 This is my personal code reference repo but you are welcome to use it! Just be aware that I am constantly updateding and improving these cheatsheets.
 
-James
+## Get the Cheetsheets
+The cheatsheets are located in the **cheatsheets** folder. 
+
+## Available Cheetsheets
+
+- C#
+- Markdown (work-in-progress)
+- Power Automate
