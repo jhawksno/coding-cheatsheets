@@ -34,7 +34,7 @@ Double Quotes: Creates a string data type.
 |double     | ~15-17 digits | 
 |decimal    | 28-29 digits  |
 
-Float Literal: Append the letter *"*F* after the number. Can be upper or lower-case. 
+Float Literal: Append the letter *F* after the number. Can be upper or lower-case. 
 
 ~~~C#
 Console.WriteLine(0.25F);
@@ -80,13 +80,13 @@ In this case, you're creating a new variable type *string* called *firstName*. F
 ### Variable name rules and conventions
 - Can be alphanumeric characters and the underscore character.
 - Special characters like the hash # or dollar sign $ are not allowed.
-- Variable names must begin with an alphabetical letter or an underscore, not a number
-- Names are case-sensitive
-- Names must not be a C# keyword. Example *decimal decimal* or *string string*
-- SHould use camel case. Example string thisIsCamelCase.
-- Should be descriptive and meaningful
-- Should be one or more words appended together, don't use contractions or abbrieviations
-- Shouldn't include the data type of the variable. You might see some advice to use a style like *string strValue;*
+- Variable names must begin with an alphabetical letter or an underscore, not a number.
+- Names are case-sensitive.
+- Names must not be a C# keyword. Example: `decimal decimal` or `string string`.
+- SHould use camel case. Example: string `thisIsCamelCase`.
+- Should be descriptive and meaningful.
+- Should be one or more words appended together, don't use contractions or abbrieviations.
+- Shouldn't include the data type of the variable. You might see some advice to use a style like `string strValue;`.
 
 ### Assinging a Variable
 Is also referred to as "setting the variable", or simply a "set" operation.
@@ -118,7 +118,22 @@ var message = "Hello World!";
 
 ## Format literal strings of C#
 
+### Escape characters list
 An escape character sequence is an introduction to the runtime to insert a special character that will affect the output of your string. In C#, the escape character sequence begins with a backslash `\` followed by the character your're escaping. 
+
+| Escape character | Description      |
+|------------------|------------------|
+| \n               | New line         |
+| \t               | Tab              |
+| \b               | Backspace        |
+
+| Escape character | Result   | Description   |
+|------------------|:--------:|---------------|
+|\'                | '        | Single quote  |
+|\"                | "        | Double-quote  |
+|\\                | \        | Backslash     |
+
+### Escape character usage
 
 Example: the `\n` sequence will add a new line, and a `\t` sequence will add a tab.
 ~~~C#
@@ -207,5 +222,63 @@ You can do this:
 string message = $"{greeting} {firstName}!";
 ~~~
 
+### Interpolate a literal string and a variable value
+You create a literal string and prefix the string with the `$` symbol. The literal string should contain at least one set of curly braces `{}` and inside of those characters you use the name of a variable.
 
+Example:
+~~~C#
+string firstName = "Bob";
+string message = $"Hello {firstName}!";
+Console.WriteLine(message);
+~~~
+
+### Combining multiple variables and literal strings. 
+You can do this in the same line of code.
+
+Example:
+~~~C#
+int version = 11;
+string updateText = "Update to Windows";
+string message = $"{updateText} {version}";
+Console.WriteLine(message);
+~~~
+
+Output:
+
+~~~C#
+Update to Windows 11
+~~~
+
+### Avoid intermediate variables
+As with *string interpolation*, you should avoid using a temporary variable to store the message.
+
+The code used above for **Combining multiple variables and literal strings** can be simplified as shown below.
+
+Example:
+
+~~~C#
+int version = 11;
+string updateText = "Update to Windows";
+Console.WriteLine($"{updateText} {version}!");
+~~~
+
+Output:
+
+~~~C#
+Update to Windows 11!
+~~~
+
+## Combine verbatim literals & string interpolation
+You can use both the verbatim literal prefix symbol `@` and the string interpolation `$` symbol together. In the example below, the `$` symbol allows you to reference the `projectName` variable inside the braces, while the `@` symbol allows you to use the unescaped `\` character.
+
+~~~C#
+string projectName = "First-Project";
+Console.WriteLine($@"C:\Output\{projectName}\Data");
+~~~
+
+Output:
+
+~~~C#
+C:\Output\First-Project\Data
+~~~
 
