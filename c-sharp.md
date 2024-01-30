@@ -146,16 +146,17 @@ Instead of using an extra variable to hold the new string that resulted from the
 
 Example (WRONG): 
 ------
-string firstName = "Bob";
-string greeting = "Hello";
-string message = greeting + " " + firstName + "!";
-Console.WriteLine(message);
+                string firstName = "Bob";
+                string greeting = "Hello";
+                string message = greeting + " " + firstName + "!";
+                Console.WriteLine(message);
 ---
+
 Example (CORRECT)
 ------
-string firstName = "Bob";
-string greeting = "Hello";
-Console.WriteLine(greeting + " " + firstName + "!");
+                string firstName = "Bob";
+                string greeting = "Hello";
+                Console.WriteLine(greeting + " " + firstName + "!");
 ----
 
 
