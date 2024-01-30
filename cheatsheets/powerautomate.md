@@ -15,7 +15,8 @@ Functions are grouped into 10 different categories like math and logic.
 9. URI Parsing Functions
 10. Manipulation Functions
 
-**String functions**
+### String functions
+
 Example: 
 ~~~C#
 formatNumber(12.5, 'C')
