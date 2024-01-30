@@ -145,16 +145,18 @@ Console.WriteLine(message);
 Instead of using an extra variable to hold the new string that resulted from the concatentation operation, perform the concatenation operation as you need it.
 
 Example (WRONG): 
+------
 string firstName = "Bob";
 string greeting = "Hello";
 string message = greeting + " " + firstName + "!";
 Console.WriteLine(message);
-
+---
 Example (CORRECT)
+------
 string firstName = "Bob";
 string greeting = "Hello";
 Console.WriteLine(greeting + " " + firstName + "!");
-
+----
 
 
 
