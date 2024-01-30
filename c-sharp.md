@@ -187,9 +187,28 @@ Console.WriteLine(message);
 
 Example (CORRECT)
 ~~~C#
-                string firstName = "Bob";
-                string greeting = "Hello";
-                Console.WriteLine(greeting + " " + firstName + "!");
+string firstName = "Bob";
+string greeting = "Hello";
+Console.WriteLine(greeting + " " + firstName + "!");
+~~~
+
+## String interpolation
+Used when you need to combine many literal strings and variables into a single formatted message.
+
+This is achieved by using an *interpolation expression* that is indicated by an opening and closing curly brace symbol ~~~{ }~~~. You can put any C# expression that returns a value inside the braces. The literally string becomes a template when it's prefixed by the ~~~$~~~ character.
+
+Example:
+
+Instead of this:
+
+~~~C#
+string message = greeting + " " + firstName + "!";
+~~~
+
+You can do this:
+
+~~~C#
+string message = $"{greeting} {firstName}!";
 ~~~
 
 
