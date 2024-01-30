@@ -1,4 +1,4 @@
-# C# Cheat Sheet
+# C# Cheatsheet
 
 This is a work in progress as I learn to code with C#.
 
