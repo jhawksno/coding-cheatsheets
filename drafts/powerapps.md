@@ -22,4 +22,15 @@ If you want to edit an existing record, you need to set the form Item to the ite
 
 After submitting the form, the form's default mode will change back to **Edit**.
 
+### Directional Containers
+
+**Container:** Allows controls to be positioned on top of one another.
+
+**Horizontal:** Aligns everything from left to right.
+
+**Vertical:** Aligns everything from top to bottom
+
+### Fill Portions Property
+Fill Portions define what fraction of the screen a control takes up. This is only available for flexible controls. 
+
    
