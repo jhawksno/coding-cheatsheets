@@ -1,4 +1,11 @@
-# Microsoft Dataverse.
+# Microsoft Dataverse
+
+- Dataverse Tables
+- Columns
+- Primary Name Column
+- Working with Solutions
+- Gateways
+- Licensing
 
 ## Environment - Provision your Dataverse Environment
 Dataverse for Teams environment is where all business data, apps and flows are stored. Each environment is associated with a Microsoft Office 365 group for the team. Each team can only have one Dataverse Teams environment. When an app or chatbot is created for the first time into a team, the Dataverse for Teams environment is provisioned automatically. After the environment is created, you can create tables and flows in Dataverse.
