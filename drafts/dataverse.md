@@ -78,6 +78,41 @@ Primary name column is not the same as the unique identifier column that is also
   ### Create an alternate key
   Remember the GUID is called the Primary Key. You can assign an alternate key that is easier for users to identify. When defining a custom key, Common Data Model makes sure that every entry in that key column is required and unique. It can improve search and filtering on the particular column because alternate key fields are always indexed.
 
+## Dataflows
+Dataflows allow users to extract, transform, and load data from a wide range of data sources into your Dataverse tables. A dataflow is a collection of tables that are created and managed in environments in the Power Apps service. You can add and edit tables in your dataflow, and manage data refresh schedules, directly from the environment in which your dataflow was created.
+
+Once you create a dataflow in the Power Apps portal, you can get data from it using the Dataverse connector.
+
+There are three primary steps to using a dataflow:
+
+- Author the dataflow in the Power Apps portal. You select the destination to load the output data to, the source to get the data from, and the Power Query steps to transform the data using Microsoft tools that are designed to make doing so straightforward.
+- Schedule dataflow runs. This setting is the frequency with which the Power Platform Dataflow should refresh the data that your dataflow will load and transform.
+- Use the data you loaded to the destination storage. You can build apps, flows, Power BI reports, and dashboards. Or connect directly to the dataflow’s Common Data Model folder in your organization’s lake using Azure data services like Azure Data Factory. Or you can use Azure Databricks or any other service that supports the Common Data Model folder standard.
+
+### Create a dataflow using PowerQuery
+Dataflows are created in one environment, which means you can only use them from that environment. User will require access to that environment in order to use them.
+
+## Database Relationships
+To make an efficient and scalable solution, you'll need to split up data into different containers (tables).
+
+Tables that relate to one another have a relational connection. The technology that underlies Microsoft Dataverse is a relational database that is managed in the cloud by Microsoft. 
+
+Two most common types:
+1. **One-to-one**
+2. **One-to-many (1:N)**
+  - Also known as parent-child relationships
+  - A column that allows unique vaules is used to identify the parent row. This unique column is called a key.
+  - The same value (the parent key) is stored in the related child rows.
+  - This column is called a foreign key when the child row is used to store the parent value.
+  - An easy way to create a table relationship is by creating a column with data type Lookup to another table. Creating a lookup column creates a many-to-one relationship. Corrospondingly, creating a one-to-many relationship creates a lookup column on the related table.
+  - Example: An invoice with line items, a classroom (one) and students in the classroom (the many).
+
+Other types:
+- **Many-to-many (N:N)**
+  - Includes a special third table called a relationship table, sometimes called an intersect table, which maps how the many rows of one table can be related to the many rows of another table.
+  - More complex than a one-to-many
+  - Examples: Authours and books. A book can have multiple authours and an authour can have multiple books.
+
 ## Working with Solutions
 
 ### Types of Solutions
