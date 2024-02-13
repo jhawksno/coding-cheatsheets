@@ -52,10 +52,31 @@ Primary name column is not the same as the unique identifier column that is also
  
 **Tip** You can add any combo of columns to a custom or standard table to meet your needs, but you can't delete a standard column from a standard table.  
 
-The number of columns within a table varies between a few columns to a hundred or more. If you require more than a few hundred columns, you might need to consider how you're structuring your data storage.
-
 **Tip** Use Standard tables and columns when possible. Review the list of standard tables before you create a custom table.
 
+### Restrictions that apply to columns in a table
+
+**Maximum number of columns in a table:**
+- There's no limit of columns, but there's an upper boundry due to limits in how much data you can store in a single record. This depends on the total space used by all columns in the table.
+- As a rule, the number of columns within a table varies between a few columns to a hundred or more. If you require more than a few hundred columns, you might need to consider how you're structuring your data storage.
+
+**Rollup columns**
+- Max of 10 for each table
+- Max of 100 for each organization
+- Can't trigger workflows or flows
+
+**Choice columns:**
+- Can support hundreds of options within a Choice but you shouldn't consider hundreds as the upper limit. Usability studios show that people have trouble using a system where a drop-down control provide a large number of options.
+- Use a Choice column to define categories for data. Don't use Choice columns to select categories that acutally represent seperate items of data. For example, rather than maintaining a Choice column that stores each of hundreds of possible manufacturers of a type of equipment, consider creating a table that stores references to each manufacturer and use a Lookup column instead of a Choice column
+
+### Creating an auto numbering column
+- String prefixed number: automatically incrementing number with an optional string constant prefix. Example, prefix of Consto would generate records such as Consto-1000, Consto-1001, etc.
+- Date prefixed number: automatically incrementing number with a formatted date prefix. Example, 2019-26-02-1000, 2019-26-02-1001, etc.
+- Custom: create a custome format of autonumber column.
+- Seeding a starting value: Set a seed value to start the autonumbering at any value.
+
+  ### Create an alternate key
+  Remember the GUID is called the Primary Key. You can assign an alternate key that is easier for users to identify. When defining a custom key, Common Data Model makes sure that every entry in that key column is required and unique. It can improve search and filtering on the particular column because alternate key fields are always indexed.
 
 ## Working with Solutions
 
