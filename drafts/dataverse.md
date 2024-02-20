@@ -109,9 +109,24 @@ Two most common types:
 
 Other types:
 - **Many-to-many (N:N)**
-  - Includes a special third table called a relationship table, sometimes called an intersect table, which maps how the many rows of one table can be related to the many rows of another table.
+  - Includes a special third table called a relationship table, sometimes called an intersect table, which maps how the many rows of one table can be related to the many rows of another table. This table is not visible to users. You cannot add columns to the intersect table or trigger workflow or Power Automate cloud flows when rows are associated or disassociated , with each other.
   - More complex than a one-to-many
+  - You cannot edit the tables in a many-to-many relationship after it has been created; you can only delete it.
+  - Not all tables can be used with many-to-many relationships. If the table is not listed in the designer, you cannot create a new many-to-many relationship with this table.
   - Examples: Authours and books. A book can have multiple authours and an authour can have multiple books.
+
+ ### Connections
+ Connection roles can be included within a solution.
+
+ ## Dataverse for Teams
+ The four types of Dataverse for Teams solutions are:
+ 1. Apps
+ 2. Workflows
+ 3. Chatbots
+ 4. Dashboards
+
+### Environments
+In Dataverse for Teams and Datavers, data is stored within an environment. Dataverse for Teams creates a single environment for each team in Teams where you create data, apps, chatbots and workflows. Dataverse for Teams has a capacity of 2GB which can store up to 1 million rows of data.
 
 ## Working with Solutions
 
